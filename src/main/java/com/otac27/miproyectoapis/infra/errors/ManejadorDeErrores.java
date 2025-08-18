@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ManejadorDeErrores {
 
     @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity tratarError404() {
-        return ResponseEntity.notFound().build();
+    public ResponseEntity<DatosErrorGenerico> tratarError404(EntityNotFoundException e) {
+        return ResponseEntity.notFound().body(new DatosErrorGenerico(e.getMessage()));
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -23,8 +23,8 @@ public class ManejadorDeErrores {
     }
 
     @ExceptionHandler(ValidacionDeIntegridad.class)
-    public ResponseEntity errorHandlerValidacionesDeIntegridad(Exception e) {
-        return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+    public ResponseEntity<DatosErrorGenerico> errorHandlerValidacionesDeIntegridad(ValidacionDeIntegridad e) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(new DatosErrorGenerico(e.getMessage()));
     }
 
     private record DatosErrorValidacion(String campo, String error) {
@@ -32,4 +32,7 @@ public class ManejadorDeErrores {
             this(error.getField(), error.getDefaultMessage());
         }
     }
+
+    // DTO para errores genéricos con un solo mensaje
+    private record DatosErrorGenerico(String mensaje) {}
 }

@@ -1,5 +1,12 @@
 # ForoHub API
 
+![Java](https://img.shields.io/badge/Java-17-blue.svg)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3.0-brightgreen.svg)
+![Maven](https://img.shields.io/badge/Maven-3.8-orange.svg)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-blue.svg)
+![JWT](https://img.shields.io/badge/JWT-Auth0-orange.svg)
+![License](https://img.shields.io/badge/License-Apache%202.0-lightgrey.svg)
+
 API RESTful para la gestión de un foro de discusión, desarrollada como parte del programa ONE (Oracle Next Education) en colaboración con Alura Latam. La API permite a los usuarios registrarse, autenticarse y gestionar tópicos de discusión.
 
 ## ✨ Características
@@ -56,6 +63,10 @@ API RESTful para la gestión de un foro de discusión, desarrollada como parte d
     spring.datasource.username=tu_usuario_mysql
     spring.datasource.password=tu_contraseña_mysql
     ```
+    > **💡 Tip Profesional:** En un entorno de producción, es una mejor práctica configurar estas credenciales y el secreto de JWT (`api.security.secret`) como variables de entorno para no exponer información sensible en el código fuente. Spring Boot las detectará automáticamente.
+
+## 📸 Capturas de Pantalla
+*Aquí puedes agregar capturas de pantalla de tu API funcionando, por ejemplo, una petición en Postman o la interfaz de Swagger.*
 
 ## ▶️ Ejecución
 
@@ -95,4 +106,4 @@ Una vez que la aplicación esté en ejecución, puedes acceder a la documentaci�
 http://localhost:8085/swagger-ui.html
 
 ---
-*Proyecto desarrollado por [Tu Nombre].*
+*Proyecto desarrollado por [Reemplaza con tu Nombre Completo].*
