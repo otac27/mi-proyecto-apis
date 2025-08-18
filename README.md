@@ -40,8 +40,8 @@ API RESTful para la gestión de un foro de discusión, desarrollada como parte d
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone https://github.com/tu-nombre-de-usuario/api-voll-clinica.git
-    cd api-voll-clinica
+    git clone https://github.com/tu-nombre-de-usuario/forohub-api.git
+    cd forohub-api
     ```
 
 2.  **Crear la base de datos:**

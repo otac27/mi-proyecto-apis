@@ -25,15 +25,16 @@ public class AuthorController {
     private final PasswordEncoder passwordEncoder;
 
     @PostMapping
-    public ResponseEntity<String> registrarAuthor(@RequestBody @Valid DatosRegistroAuthor datos, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<Void> registrarAuthor(@RequestBody @Valid DatosRegistroAuthor datos, UriComponentsBuilder uriBuilder) {
         if (authorRepository.findByEmail(datos.email()).isPresent()) {
             throw new ValidacionDeIntegridad("El email ya está en uso.");
         }
 
+        // El constructor de Author no necesita el ID (es autogenerado) ni la lista de tópicos (se maneja por la relación)
         Author author = new Author(null, datos.nombre(), datos.email(), passwordEncoder.encode(datos.password()));
         authorRepository.save(author);
 
         URI url = uriBuilder.path("/authors/{id}").buildAndExpand(author.getId()).toUri();
-        return ResponseEntity.created(url).body("Usuario registrado exitosamente. ID: " + author.getId());
+        return ResponseEntity.created(url).build(); // Devuelve 201 Created con la URL y cuerpo vacío
     }
 }

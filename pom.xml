@@ -6,9 +6,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.otac27</groupId> <!-- Aquí va tu groupId -->
-    <artifactId>api-voll-clinica</artifactId> <!-- Aquí va el artifactId -->
+    <artifactId>forohub-api</artifactId> <!-- Nombre alineado con el proyecto -->
     <version>0.0.1-SNAPSHOT</version> <!-- Aquí va la versión -->
-    <name>api-voll-clinica</name>
+    <name>forohub-api</name>
     <description>API REST en Spring Boot 3 con MySQL, Flyway, JWT y Swagger</description>
 
     <properties>
