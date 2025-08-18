@@ -1,0 +1,1 @@
+ALTER TABLE authors ADD password VARCHAR(300) NOT NULL;
