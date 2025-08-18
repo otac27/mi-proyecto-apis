@@ -82,11 +82,15 @@ La API estará disponible en `http://localhost:8085`.
 
 ### Autenticación
 
-- **`POST /register`**: Registra un nuevo usuario. Es un endpoint público.
-  - **Body:** `{ "nombre": "...", "email": "...", "password": "..." }`
-
 - **`POST /login`**: Autentica a un usuario y devuelve un token JWT.
   - **Body:** `{ "email": "...", "password": "..." }`
+
+### Autores (Usuarios)
+
+- **`POST /authors`**: Registra un nuevo autor (usuario). Es un endpoint público.
+  - **Body:** `{ "nombre": "...", "email": "...", "password": "..." }`
+- **`GET /authors/{id}`**: Obtiene los detalles de un autor específico. Requiere autenticación.
+
 
 ### Tópicos (Requieren Autenticación)
 

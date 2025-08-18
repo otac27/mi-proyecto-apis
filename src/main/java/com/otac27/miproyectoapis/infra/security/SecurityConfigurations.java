@@ -26,7 +26,7 @@ public class SecurityConfigurations {
         return httpSecurity.csrf(csrf -> csrf.disable())
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.POST, "/login", "/register").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/login", "/authors").permitAll()
                         // Permitimos que cualquiera pueda leer los tópicos
                         .requestMatchers(HttpMethod.GET, "/topicos", "/topicos/**").permitAll()
                         .requestMatchers("/swagger-ui.html", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
